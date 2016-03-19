@@ -276,6 +276,7 @@ float LevelSet::cost_func(int i, int j)
     float variance_inside_func_val = 0;
     float variance_outside_func_val = 0;
     float com_func_val = 0;
+    float pixel_func_val = 0;
 
     if(m_coef_area != 0){
         area_func_val = -m_coef_area*area_func();
@@ -296,10 +297,10 @@ float LevelSet::cost_func(int i, int j)
         com_func_val = -m_coef_com*com_func(i,j);
     }
     if(m_coef_pixel != 0){
-        com_func_val = m_coef_pixel*segmentation_func(i,j);
+        pixel_func_val = m_coef_pixel*segmentation_func(i,j);
     }
 
-    return area_func_val + mean_inside_func_val + mean_outside_func_val + variance_inside_func_val + variance_outside_func_val + com_func_val;
+    return area_func_val + mean_inside_func_val + mean_outside_func_val + variance_inside_func_val + variance_outside_func_val + com_func_val + pixel_func_val;
 }
 
 // Area functional
@@ -374,7 +375,8 @@ float LevelSet::segmentation_func(int i, int j)
 {
     QRgb pixel = m_image.pixel(i-1, j-1);
 
-    return pow(qRed(pixel) - m_mean_inside.at(0),2) + pow(qGreen(pixel) - m_mean_inside.at(1),2) + pow(qBlue(pixel) - m_mean_inside.at(2),2);
+    return pow(qRed(pixel) - 255,2) - pow(qRed(pixel) - 0,2) + pow(qGreen(pixel) - 255,2) - pow(qGreen(pixel) - 0,2) + pow(qBlue(pixel) - 255,2) - pow(qBlue(pixel) - 0,2);
+
 }
 
 void LevelSet::paint_border()
