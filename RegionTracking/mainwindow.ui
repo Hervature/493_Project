@@ -40,6 +40,13 @@
         </property>
        </widget>
       </item>
+      <item row="5" column="5">
+       <widget class="QLineEdit" name="iterations_edit">
+        <property name="text">
+         <string>100</string>
+        </property>
+       </widget>
+      </item>
       <item row="3" column="1">
        <widget class="QLineEdit" name="mean_inside_edit">
         <property name="text">
@@ -61,6 +68,27 @@
         </property>
        </widget>
       </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="com_edit">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="4">
+       <widget class="QLineEdit" name="variance_outside_edit">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="QPushButton" name="previous_button">
+        <property name="text">
+         <string>Previous</string>
+        </property>
+       </widget>
+      </item>
       <item row="1" column="1">
        <widget class="QPushButton" name="run_button">
         <property name="text">
@@ -77,6 +105,26 @@
       </item>
       <item row="6" column="0" colspan="6">
        <widget class="QGraphicsView" name="graphicsView"/>
+      </item>
+      <item row="2" column="3" colspan="2">
+       <widget class="QLabel" name="variance_label">
+        <property name="text">
+         <string>Variance</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="com_title_label">
+        <property name="text">
+         <string>Center of Mass:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="length_label">
@@ -112,40 +160,6 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="4">
-       <widget class="QLineEdit" name="variance_outside_edit">
-        <property name="text">
-         <string>0</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="3" colspan="2">
-       <widget class="QLabel" name="variance_label">
-        <property name="text">
-         <string>Variance</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="4">
-       <widget class="QPushButton" name="previous_button">
-        <property name="text">
-         <string>Previous</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="com_title_label">
-        <property name="text">
-         <string>Center of Mass:</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
       <item row="4" column="1">
        <widget class="QLabel" name="com_label">
         <property name="text">
@@ -153,13 +167,6 @@
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <widget class="QLineEdit" name="com_edit">
-        <property name="text">
-         <string>0</string>
         </property>
        </widget>
       </item>
@@ -173,27 +180,20 @@
         </property>
        </widget>
       </item>
-      <item row="5" column="5">
-       <widget class="QLineEdit" name="iterations_edit">
+      <item row="5" column="3">
+       <widget class="QLineEdit" name="pixel_edit">
         <property name="text">
-         <string>100</string>
+         <string>0</string>
         </property>
        </widget>
       </item>
       <item row="4" column="3">
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="pixel_label">
         <property name="text">
          <string>Pixel Tracker</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="3">
-       <widget class="QLineEdit" name="pixel_edit">
-        <property name="text">
-         <string>0</string>
         </property>
        </widget>
       </item>

@@ -131,12 +131,6 @@ float LevelSet::descent_func()
         for(int j=1; j < m_height-1; j++)
         {
             m_u.at(i).at(j) = m_u_temp.at(i).at(j) + delta_t * (m_coef_length*m_K.at(i).at(j) * pow(pow(m_disc_grad.at(4).at(i).at(j),2) + pow(m_disc_grad.at(5).at(i).at(j),2),0.5) - (fmax(m_F.at(i).at(j),0)*grad_plus(i,j)+fmin(m_F.at(i).at(j),0)*grad_minus(i,j)));
-
-            // Limit size of u
-            if(fabs(m_u.at(i).at(j)) > 10000)
-            {
-                m_u.at(i).at(j) = m_u.at(i).at(j)/fabs(m_u.at(i).at(j))*10000;
-            }
         }
     }
 
